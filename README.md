@@ -1,48 +1,44 @@
-Image Encryption and Decryption Tool
-This Python script allows users to encrypt and decrypt images using a password-based encryption method. It employs rail fence encryption to secure the images.
+# ImageCrypt
 
-Features
-Image Encryption: Encrypt your images using a password.
-Image Decryption: Decrypt previously encrypted images using the correct password.
-Security: Implements password-based encryption to secure images.
-Prerequisites
-Python 3.x installed on your system.
-Required Python libraries: numpy and pillow. You can install them via pip:
-Copy code
+ImageCrypt is a Python script designed to encrypt and decrypt image files using a password-based encryption method. The script leverages the PIL library for image processing and the numpy library for array manipulations.
+
+## Installation
+
+Ensure you have the required libraries installed by executing the following command:
+
+```bash
 pip install numpy pillow
-Usage
-Clone the repository to your local machine.
-Navigate to the directory where the script is located.
-Run the script using Python:
-Copy code
+```
+
+## Usage
+
+To run the script, execute:
+
+```bash
 python image_crypt.py
-Follow the on-screen instructions to encrypt or decrypt images.
-Instructions
-Encryption: Provide the image filename and a password of at least 8 characters to encrypt the image.
-Decryption: Provide the encrypted image filename and the correct password to decrypt the image.
-Exiting: Enter 'X' or 'x' when prompted to exit the program.
-Notes
-Ensure that the image files you want to encrypt or decrypt are in PNG or JPG format.
-Encrypted images are saved with '-e.png' suffix appended to the original filename.
-Example
-Here's an example of how to use the script:
+```
 
-Encrypt an image:
+Follow the prompts to provide the image filename and password.
 
-mathematica
-Copy code
-Enter image filename or quit[Q/q]: example.png
-Enter password: ********
-Do you want to encrypt or decrypt the image or exit [E/D/X]? E
-Decrypt the encrypted image:
+- Choose the mode: encrypt (E) or decrypt (D).
+- The script will process the image and save the output as a new image file (encrypted or decrypted).
+- Repeat the process to continue encrypting or decrypting images.
+- To exit, enter 'x' or 'X' when prompted for the mode.
 
-mathematica
-Copy code
-Enter image filename or quit[Q/q]: example-e.png
-Enter the correct password for decryption: ********
-Do you want to encrypt or decrypt the image or exit [E/D/X]? D
-Contributing
-Contributions are welcome! Feel free to submit pull requests or open issues if you encounter any problems or have suggestions for improvement.
+## How it Works
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+The script follows this encryption and decryption process:
+
+1. **Reading the Image**: The script reads the image file and converts it into a list of RGB pixel values.
+
+2. **Password Processing**: The password is converted into a list of ASCII codes.
+
+3. **Rail Fence Cipher**: The pixel list is encrypted using the Rail Fence Cipher technique with the password.
+
+4. **Reconstructing the Image**: The encrypted or decrypted pixel list is rearranged to recreate the image.
+
+5. **Saving the Output**: The resulting image is saved as a new file with the '-e' or '-d' suffix.
+
+## Note
+
+While the script employs a password-based encryption method, it is not suitable for serious security purposes due to its lack of cryptographic robustness. It is recommended for educational and entertainment purposes only.
