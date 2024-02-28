@@ -45,4 +45,4 @@ Contributing
 Contributions are welcome! Feel free to submit pull requests or open issues if you encounter any problems or have suggestions for improvement.
 
 License
-This project is licensed under the MIT License. See the LICENSE file for details.# Image-Cryptography
+This project is licensed under the MIT License. See the LICENSE file for details.
